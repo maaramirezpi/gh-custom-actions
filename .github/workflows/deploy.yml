@@ -67,10 +67,10 @@ jobs:
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-        uses: ./.github/actions/deploy-s3-js
+        uses: ./.github/actions/deploy-s3-docker
         with:
           bucket: maaramirezpi-custom-action
           dist-folder: ./dist
-      - name:
+      - name: output info
         run: |
           echo "Live url ${{ steps.deploy.outputs.website-url }}"
